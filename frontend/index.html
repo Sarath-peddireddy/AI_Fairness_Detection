@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fairness Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Fairness Detection System</h1>
+            <p style="color: white; font-size: 1.5rem;font-weight: bold;">Advanced bias and fairness detection</p>
+
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="input-methods">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="text">Text Input</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="text-input">
+                        <textarea id="input-text" placeholder="Enter your text here for bias analysis..."></textarea>
+                    </div>
+                </div>
+                
+                <button id="analyze-btn" class="primary-btn">
+                    <span class="btn-text">Analyze</span>
+                    <span class="loading-spinner hidden"></span>
+                </button>
+            </section>
+
+            <section class="results-section" id="results">
+                <div class="result-card bias-detection">
+                    <h2><i class="fas fa-search"></i> Bias Detection Results</h2>
+                    <div class="bias-metrics">
+                        <div class="metric">
+                            <span class="label">Bias Label:</span>
+                            <span id="bias-label" class="value">-</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Bias Score:</span>
+                            <div class="score-container">
+                                <div id="bias-score-bar" class="score-bar"></div>
+                                <span id="bias-score" class="value">-</span>
+                            </div>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Bias Type:</span>
+                            <span id="bias-type" class="value">-</span>
+                        </div>
+                    </div>
+                    <div class="explanation">
+                        <h3>Detailed Analysis</h3>
+                        <p id="bias-explanation">-</p>
+                    </div>
+                </div>
+
+                <div class="result-card mitigation">
+                    <h2><i class="fas fa-shield-alt"></i> Mitigation Strategies</h2>
+                    <div id="mitigation-strategies" class="strategies">
+                        <div class="strategy-list">
+                            <p>No strategies available yet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card additional-info">
+                    <h2><i class="fas fa-info-circle"></i> Additional Context</h2>
+                    <div class="info-tabs">
+                        <button class="info-tab active" data-tab="rag">RAG Results</button>
+                        <button class="info-tab" data-tab="web">Web Search</button>
+                    </div>
+                    <div id="rag-results" class="info-content active">
+                        <p>-</p>
+                    </div>
+                    <div id="web-results" class="info-content">
+                        <p>-</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="error-message" id="error-message"></div>
+            <div class="status-message" id="status-message"></div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loader"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
